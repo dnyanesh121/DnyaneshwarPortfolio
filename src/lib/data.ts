@@ -25,7 +25,7 @@ export const about = {
     "I love learning about new technologies, the problems they solve, and how I can use them to build better products.",
   ],
   stats: [
-    { value: "4+", label: "Projects shipped" },
+    { value: "4", label: "Projects shipped" },
     { value: "2022", label: "M.Sc. Computer Science" },
     { value: "10+", label: "Technologies" },
     { value: "∞", label: "Curiosity" },
@@ -100,54 +100,85 @@ export type Project = {
   features: string[];
   tech: string[];
   live: string;
+  github?: string;
   image: string;
   accent: string;
+  featured?: boolean;
 };
 
 export const projects: Project[] = [
   {
-    title: "Know Your Restaurant",
-    category: "Full-stack web app",
+    title: "DhartiGrain",
+    category: "Main project · Marketplace",
     description:
-      "A React application that fetches and displays restaurant data from a public API. Users can search for restaurants and recipes, register, sign in and explore real-time data.",
-    features: ["Search restaurants & recipes", "User register / sign in", "Real-time API calls", "Responsive UI"],
-    tech: ["React", "Redux", "Bootstrap", "HTML5", "CSS3"],
-    live: "https://know-your-restaurants.netlify.app/",
-    image: "/images/know-your-restaurant.webp",
-    accent: "from-teal-400/25 to-emerald-500/5",
+      "A farm-to-fork marketplace that connects Indian farmers directly with buyers. Verified sellers, evidence-reviewed organic claims, clear price-per-kg, a smooth cart and checkout, seller onboarding and an admin review dashboard — with a multilingual interface.",
+    features: [
+      "Verified farmer onboarding",
+      "Evidence-reviewed organic claims",
+      "Transparent price per kg",
+      "Cart, orders & checkout",
+      "Seller + admin dashboards",
+      "Multilingual (i18n) UI",
+    ],
+    tech: ["React", "TypeScript", "Vite", "Framer Motion", "Netlify"],
+    live: "https://dharti-grain.netlify.app/",
+    image: "/images/dharti-grain.webp",
+    accent: "from-emerald-400/25 to-lime-500/5",
+    featured: true,
   },
   {
-    title: "COVID-19 Tracker",
-    category: "Data dashboard",
+    title: "First Advisors — Loans",
+    category: "React web app",
     description:
-      "A responsive dashboard built with the corona database API. Track COVID-19 statistics country by country with live data and a clean, readable interface.",
-    features: ["Country-wise tracking", "Real-time API calls", "Fully responsive", "Data visualisation"],
-    tech: ["React", "Redux", "Bootstrap", "HTML5", "CSS3"],
-    live: "https://swati-covid-19-app.netlify.app/",
-    image: "/images/covid-tracker.webp",
+      "A complete React rebuild of the First Advisors loans site. Compare personal, home, car, education and business loans from partner banks and NBFCs with transparent charges, calculators and a quick-apply flow.",
+    features: [
+      "16 loan products",
+      "EMI & eligibility calculators",
+      "Rates and charges breakdown",
+      "Quick apply & tracking",
+      "Mega-menu navigation",
+    ],
+    tech: ["React", "Vite", "React Router", "Framer Motion", "CSS3"],
+    live: "https://first-advisor-loans.netlify.app/",
+    github: "https://github.com/dnyanesh121/first-advisor-loans",
+    image: "/images/first-advisor-loans.webp",
     accent: "from-sky-400/25 to-blue-600/5",
   },
   {
-    title: "GitHub Jobs",
-    category: "Search platform",
+    title: "First Advisors — Real Estate",
+    category: "React web app",
     description:
-      "A job discovery portal powered by the GitHub Jobs API. Search developer roles and browse results fetched live, with a fast and focused user experience.",
-    features: ["Search jobs", "Live API results", "Responsive layout", "Clean job cards"],
-    tech: ["React", "Redux", "Bootstrap", "HTML5", "CSS3"],
-    live: "https://swati-githubjobsportal.netlify.app/",
-    image: "/images/github-jobs.webp",
-    accent: "from-violet-400/25 to-fuchsia-600/5",
+      "A property marketplace for buying, selling, leasing and investing across Mumbai, Thane, Navi Mumbai and Pune, with powerful search, property comparison, galleries, agent details and visit scheduling.",
+    features: [
+      "Property search & filters",
+      "Compare properties",
+      "Photo lightbox gallery",
+      "Schedule site visits",
+      "Enquiry forms & agent cards",
+    ],
+    tech: ["React", "Vite", "React Router", "Framer Motion", "CSS3"],
+    live: "https://first-advisor-real-estate.netlify.app/",
+    github: "https://github.com/dnyanesh121/first-advisor-real-estate",
+    image: "/images/first-advisor-real-estate.webp",
+    accent: "from-amber-400/25 to-orange-600/5",
   },
   {
-    title: "All Countries Info",
-    category: "API explorer",
+    title: "First Advisors — Mutual Funds",
+    category: "React web app",
     description:
-      "A JavaScript application that pulls data from a public countries API and lets users search and explore information about any country in the world.",
-    features: ["Search any country", "Real-time API calls", "Detailed country data", "Mobile friendly"],
-    tech: ["JavaScript", "Bootstrap", "HTML5", "CSS3"],
-    live: "https://swati-allcountryinformation.netlify.app/",
-    image: "/images/all-countries.webp",
-    accent: "from-amber-400/25 to-orange-600/5",
+      "A mutual-fund discovery and planning platform. Explore equity, debt, hybrid and index funds, study NAV charts and returns, compare funds, build a watchlist and plan SIP goals starting from ₹100.",
+    features: [
+      "Fund explorer & filters",
+      "NAV charts & returns calculator",
+      "Compare funds & watchlist",
+      "SIP goal calculator",
+      "AMC directory & learn hub",
+    ],
+    tech: ["React", "Vite", "React Router", "Framer Motion", "CSS3"],
+    live: "https://first-advisor-mutual-fund.netlify.app/",
+    github: "https://github.com/dnyanesh121/first-advisor-mutual-fund",
+    image: "/images/first-advisor-mutual-fund.webp",
+    accent: "from-violet-400/25 to-fuchsia-600/5",
   },
 ];
 

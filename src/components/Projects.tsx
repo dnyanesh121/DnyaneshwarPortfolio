@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Check, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Check, ExternalLink, Github } from "lucide-react";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { projects } from "@/lib/data";
@@ -23,20 +23,35 @@ export default function Projects() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
-            <Reveal key={project.title} delay={(index % 2) * 100}>
+            <Reveal
+              key={project.title}
+              delay={(index % 2) * 100}
+              className={project.featured ? "md:col-span-2" : undefined}
+            >
               <article className="glass group h-full overflow-hidden rounded-3xl card-hover">
-                <div className={`relative h-56 overflow-hidden bg-gradient-to-br ${project.accent}`}>
+                <div
+                  className={`relative overflow-hidden bg-gradient-to-br ${project.accent} ${
+                    project.featured ? "h-64 sm:h-96" : "h-56"
+                  }`}
+                >
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    sizes="(max-width: 768px) 90vw, 560px"
+                    sizes={project.featured ? "(max-width: 768px) 90vw, 1100px" : "(max-width: 768px) 90vw, 560px"}
                     className="object-cover object-top transition duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent" />
-                  <span className="absolute left-5 top-5 rounded-full border border-white/10 bg-ink-950/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-accent backdrop-blur">
-                    {project.category}
-                  </span>
+                  <div className="absolute left-5 top-5 flex flex-wrap gap-2">
+                    <span className="rounded-full border border-white/10 bg-ink-950/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-accent backdrop-blur">
+                      {project.category}
+                    </span>
+                    {project.featured && (
+                      <span className="rounded-full border border-accent/40 bg-accent/15 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-accent backdrop-blur">
+                        ★ Featured
+                      </span>
+                    )}
+                  </div>
                   <a
                     href={project.live}
                     target="_blank"
@@ -72,14 +87,26 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-white"
-                  >
-                    View live demo <ExternalLink size={14} />
-                  </a>
+                  <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:text-white"
+                    >
+                      View live demo <ExternalLink size={14} />
+                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition hover:text-white"
+                      >
+                        Source code <Github size={14} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             </Reveal>

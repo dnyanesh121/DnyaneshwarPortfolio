@@ -94,16 +94,16 @@ export default function Hero() {
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-accent/20 via-transparent to-violet-500/10 blur-2xl" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-ink-800 shadow-card">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-ink-800/80 via-ink-900/40 to-ink-950 shadow-card">
               <Image
-                src="/images/profile.jpg"
+                src="/images/profile-no-bg.png"
                 alt={site.name}
                 fill
                 priority
                 sizes="(max-width: 1024px) 90vw, 420px"
-                className="object-cover object-top"
+                className="object-contain object-bottom p-3"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent">Frontend Developer</p>
                 <p className="mt-1 font-display text-xl font-semibold text-white">{site.shortName}</p>

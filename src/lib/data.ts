@@ -6,8 +6,7 @@ export const site = {
   alternativeRoles: ["React & Next.js Developer", "Full-Stack Enthusiast", "Programmer", "Lifelong Learner"],
   location: "India",
   email: "dnyaneshg121@gmail.com",
-  resume:
-    "https://drive.google.com/file/d/1T1D9HSRyerSTDNlIJSsbZhktcTbbKrbG/view?usp=sharing",
+  resume: "/Dnyaneshwar_Gaikwad_Resume.pdf",
   github: "https://github.com/dnyanesh121",
   linkedin: "https://www.linkedin.com/in/dnyaneshwar-gaikwad-3a664021a/",
   url: "https://symphonious-lokum-3a18d6.netlify.app/",
